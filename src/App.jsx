@@ -1,18 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useState} from 'react'
 import './App.css'
+import { puppyList } from './data.js'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [puppies, setPuppies] = useState(puppyList)
+  console.log(puppies)
+  
 
   return (
-    <>
       <div>
-        
+        { 
+   puppies.map((puppy) => {
+     return <p>{puppy.name}{puppy.age}</p>
+   })
+}
       </div>
-    </>
-  )
+    )
 }
 
 export default App
